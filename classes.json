@@ -1,0 +1,14 @@
+[
+    {
+        "user": 1088304705802878976,
+        "class": "Pilates",
+        "booking_time": "Thursday, 06:00AM",
+        "booking_link": "https://secure.activecarrot.com/login?site=1318"
+    },
+    {
+        "user": 364274646805118978,
+        "class": "test",
+        "booking_time": "Thursday, 11:20AM",
+        "booking_link": "https://google.com"
+    }
+]
