@@ -1,45 +1,74 @@
-# Email Reminder Bot - Python
+# Discord Class Reminder Bot
 
 A Discord bot that helps users set up recurring class reminders and automatically sends booking links at scheduled times.
 
 ## Features
 
-- Add recurring classes with `/add_class` command
-- Automatic reminders sent at scheduled times
-- Support for different days of the week
-- 24-hour time format input with automatic conversion
+- **Class Management**: Add, remove, and view recurring classes
+- **Automatic Reminders**: Sends booking links at scheduled times
+
+## Commands
+
+| Command | Description | Parameters |
+|---------|-------------|------------|
+| `/add_class` | Add a new recurring class | `name`, `day`, `time`, `link` |
+| `/remove_class` | Remove an existing class | `name` (with autocomplete) |
+| `/list_classes` | View all scheduled classes | None |
+
+### Command Details
+
+- **`name`**: Class name (e.g., "Math 101", "Yoga Session")
+- **`day`**: Day of the week (Monday through Sunday)
+- **`time`**: Time in 24-hour format (e.g., "14:30" for 2:30 PM)
+- **`link`**: Booking or class link (URL)
+
+note: day/time is when you'll be reminded. Not when the event occurs.
 
 ## Setup
 
-1. **Install dependencies:**
+### Prerequisites
+
+- Python 3.8 or higher
+- Discord Bot Token
+- Discord Server with bot permissions
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/H00Ble/BookerBot.git
+   cd BookerBot
+   ```
+
+2. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-2. **Create a `.env` file** in the project root with your Discord bot token:
+3. **Create `.env` file:**
    ```
    DISCORD_TOKEN=your_discord_bot_token_here
+   REMINDER_CHANNEL_ID=your_channel_id_here
    ```
-
-3. **Update the bot configuration:**
-   - Replace `MY_GUILD` ID with your Discord server ID
-   - Replace the `channel_id` in `check_bookings_loop()` with your target channel ID
 
 4. **Run the bot:**
    ```bash
    python bot.py
    ```
 
+## Deployment
+
+### Local Development
+```bash
+python bot.py
+```
+
 ## Usage
 
-Use the `/add_class` command to add a new recurring class:
-- `name`: Name of the class
-- `day`: Day of the week (Monday, Tuesday, etc.)
-- `time`: Time in 24-hour format (e.g., 06:00)
-- `link`: Booking link
+### Bot Permissions
 
-The bot will automatically send reminders at the specified times.
+- Send Messages
+- Use Slash Commands
+- Read Message History
+- Embed Links
 
-## Security Note
-
-Never commit your Discord bot token to version control. Always use environment variables or a `.env` file (which should be added to `.gitignore`). 
